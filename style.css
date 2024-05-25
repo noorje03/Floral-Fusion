@@ -1,0 +1,549 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+section{
+    width: 100%;
+    height: 100vh; 
+    background-image: url(./images/bg1.png);
+    background-size: cover;
+    background-position: center;
+}
+
+section nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    animation: animation2 2s ease-in-out forwards;
+}
+@keyframes animation2{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+section nav .logo{
+    font-size: 35px;
+    color: #720455;
+    margin: 5px 0;
+    cursor: pointer;
+    position: relative;
+    left: -4%;
+    animation: animation3 4s ease-in-out forwards;
+}
+
+section nav .logo span{
+    color: #36054b;
+    text-decoration: underline;
+}
+
+section nav ul{
+    list-style: none;
+}
+
+section nav ul li{
+    display: inline-block;
+    margin: 5px 10px;
+    animation: animation3 4s ease-in-out forwards;
+}
+@keyframes animation3{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+section nav ul li a{
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+    animation: animation3 4s ease-in-out forwards;
+}
+
+section nav ul li a:hover{
+    color: #720455 ;
+}
+
+section nav .icons i{
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+section nav .icons i:hover{
+    color: #720455;
+}
+
+section .main .main_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 40px;
+    animation: animation3 4s ease-in-out forwards;
+}
+
+section .main .main_content .main_text h1{
+    font-size : 90px;
+    line-height: 70px;
+    font-family: cursive;
+    background: linear-gradient(to right, #36054b , #720455);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top: 45px;
+    left: 5%;
+}
+
+section .main .main_content .main_text h1 span{
+    font-size : 90px;
+    line-height: 70px;
+    font-family: cursive;
+    background: linear-gradient(to right, #36054b , #720455);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section .main .main_content .main_text p{
+    width: 600px;
+    text-align: justify;
+    line-height: 21px;
+    position: relative;
+    top: 85px;
+    left: 5%;
+}
+
+section .main .main_content .main_image img{
+    width: 400px;
+    position: relative;
+    left: 20px;
+    top: 75px;
+    border-radius: 50%;
+    padding-bottom: 0;
+    animation: animation1 2s ease-in-out forwards;
+}
+
+@keyframes animation1{
+    from{
+        width: 0;
+    }
+    to{
+        width: 400px;
+    }
+}
+
+section .main .social_icon{
+    position: absolute;
+    top: 50%;
+    left: 98%;
+    transform: translate(-50%,-50%);
+    font-size: 19px;
+}
+
+section .main .social_icon i{
+    margin: 8px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+section .main .social_icon i:hover{
+    color: #36054b;
+}
+
+section .main .button{
+    position: absolute;
+    left: 6%;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: linear-gradient(to right , #36054b , #720455);
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 10px;
+    animation: animation3 4s ease-in-out forwards;
+}   
+
+section .main .button a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 10px;
+}
+
+section .main .button i{
+    color: white;
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+section .main .button:hover i{
+    transform: translateX(6px);
+}
+
+/* Products */
+
+.products{
+    width: 100%;
+    height: 140vh;
+    padding: 25px 0;
+}
+
+.products h1{
+    margin: 35px 0;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #36054b , #720455);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.products .box{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-gap: 25px 0;
+}
+
+.products .box .card{
+    width: 290px;
+    height: 540px;
+    box-shadow: 0 0 5px #36054b;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 10px;
+    background: #f6f6f6;
+}
+
+.products .box .card .small_card{
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    margin: 10px 0;
+    transform: translateX(-20px);
+    transition: 0.3s;
+    opacity: 0;
+    z-index: 1;
+}
+
+.products .box .card:hover .small_card{
+    transform: translateX(2px);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.products .box .card .image img{
+    width: 200px;
+    height: 300px;
+    margin: 15px 0;
+    transition: 0.3s;
+}
+
+.products .box .card:hover .image img{
+    transform: scale(1.1);
+}
+
+.products .box .card .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products .box .card .small_card i{
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 2px 0;
+    line-height: 40px;
+    border: 2px solid #999999;
+    transition: 0.2s;
+}
+
+.products .box .card .small_card i:hover{
+    color: #720455;
+}
+
+.products .box .card .products_text h2{
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.products .box .card .products_text p{
+    color: #91919191;
+    line-height: 21px;
+    margin: 8px  0;
+}
+
+.products .box .card .products_text h3{
+    margin: 5px 0;
+}
+
+.products .box .card .products_star{
+    color: rgb(215, 142, 5);
+    margin-bottom: 19px;
+    cursor: pointer;
+}
+
+.products .box .card .btn{
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    background: linear-gradient(to right , #36054b , #720455);
+}
+
+/* Reviews */
+.reviews {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.review {
+    flex: 1;
+    width: 300px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.review:hover {
+    transform: translateY(-5px);
+}
+
+.review_text p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.review_author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review_author img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.review_author h3 {
+    font-size: 20px;
+    color: #720455;
+    margin-top: 10px;
+}
+
+.review_author img {
+    width: 200px;
+    height: 200px;
+}
+
+/* About */
+
+#About .about_cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#About .about_card {
+    flex: 1;
+    max-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+#About .about_card i {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #720455;
+}
+
+#About .about_card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#About .about_card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+#About .about_card:hover {
+    transform: translateY(-5px);
+}
+
+/* Services */
+
+#Services .services_cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#Services .service_card {
+    flex: 1;
+    max-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+#Services .service_card i {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #720455;
+}
+
+#Services .service_card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#Services .service_card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+#Services .service_card:hover {
+    transform: translateY(-5px);
+}
+
+/* Login/Signup */
+
+#LoginSignup {
+    background-color: #720455;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#LoginSignup .login_signup_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: auto;
+}
+
+#LoginSignup .login_signup_content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#LoginSignup .login_signup_content h2 {
+    color: #720455;
+    margin-bottom: 20px;
+}
+
+#LoginSignup .login_signup_content p {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#LoginSignup .login_signup_content .buttons .btn {
+    padding: 15px 30px;
+    border-radius: 5px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#LoginSignup .login_signup_content .buttons .login_btn {
+    background-color: #36054b;
+}
+
+#LoginSignup .login_signup_content .buttons .signup_btn {
+    background-color: #720455;
+}
+
+#LoginSignup .login_signup_content .buttons .btn:hover {
+    transform: translateY(-3px);
+}
+
+.account_button button {
+    background-color: #720455;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: animation3 4s ease-in-out forwards;
+}
+
+.account_button button:hover {
+    background-color: #36054b;
+}
+
+/* Scrollbar */
+
+::selection {
+    background: #36054b;
+    color: white;
+}
+
+#designs::-webkit-scrollbar, #marjan::-webkit-scrollbar {
+    display: unset;
+    width: 4px;
+}
+
+/* Track */
+#designs::-webkit-scrollbar-track, #marjan::-webkit-scrollbar-track {
+    background: white;
+}
+/* Handle */
+#designs::-webkit-scrollbar-thumb, #marjan::-webkit-scrollbar-thumb {
+    background: #F7B4F9;
+}
+/* Handle on hover */
+#designs::-webkit-scrollbar-thumb:hover, #marjan::-webkit-scrollbar-thumb:hover {
+    background: #6C4C90;
+}
